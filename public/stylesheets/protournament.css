@@ -1,0 +1,18 @@
+.LandingScreen h1{
+    margin-bottom: 5vh;
+}
+
+.SubSection {
+color: white;
+}
+
+.SubSection h2 {
+    text-decoration: underline;
+    margin-bottom: 3vh;
+}
+
+.SubSection p {
+    margin-bottom: 4vh;
+    line-height: 1.6;
+    font-size: 2rem;
+}

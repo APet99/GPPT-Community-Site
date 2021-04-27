@@ -1,0 +1,46 @@
+<% include imports.ejs %>
+<link rel='stylesheet' href='/stylesheets/navbar.css' />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<nav class="navbar navbar-inverse navbar-fixed-top transparent" style="color: transparent" >
+    <div class="container-fluid">
+        <div class="navbar-header" >
+            <a href="/">
+                <img class="d-flex align-items-center" src="images/grandpappy_logo.png" alt="Grand Pappy Logo">
+            </a>
+
+        </div>
+        <ul class="nav navbar-nav">
+            <li class=""><a href="/">Home</a></li>
+
+            <li class="dropdown ">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tables
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu transparent">
+                    <li><a href="/schedule">Hosting Schedule</a></li>
+                    <li><a href="/gppt">GrandPappy's Poker Table</a></li>
+                    <li><a href="/waynecasino">Wayne Casino</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tournament
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu transparent">
+                    <li><a href="/protournament">GrandPappy's Pro Tour</a></li>
+                    <li><a href="/leaderboards">Leaderboard</a></li>
+                </ul>
+            </li>
+
+            <li><a href="/membership">Membership</a></li>
+        </ul>
+
+
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="NavBuffer"></div>

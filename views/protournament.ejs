@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" type="image/png" href="<%= icon %>" style="width: 32px; height: auto">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='stylesheets/style.css'/>
+    <link rel='stylesheet' href='stylesheets/index.css'/>
+    <link rel='stylesheet' href='stylesheets/protournament.css'/>
+
+</head>
+<body>
+<!-- navbar here   -->
+<% include partials/navbar.ejs %>
+
+<div class="LandingScreen">
+    <h1 class="Center"><%= title %></h1>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="SubSection">
+                <h2 class="Center SubSection"><b>GrandPappy's Pro Tour Summer Circuit</b></h2>
+                <p class="Center">The Summer Circuit is a dynamic tournament that will run for 4 months from May to
+                    August. Players will have 2 opportunities per week(3 if they are VIP) to play in a tournament to
+                    earn points, chips and prizes. At the end of the 4 months the top 10 point holders will be invited
+                    to a final tournament to determine the winner of the entire circuit.
+                    To sign up you will need 100,000 chips on the table to cover the buy-in. After that purchase a
+                    ticket the next time you play.</p>
+            </div>
+            <div class="SubSection">
+                <h2 class="Center SubSection"><b>Event Breakdown</b></h2>
+                <p class="Center">The Summer Circuit will start on Saturday May 1st, 2021 and end on Saturday August 24th, 2021. Players may sign up and join the tournament at any point in-between these dates. Starting on May 1st, 2021, there will be tournaments on Tuesday's at 6PM EST, Saturday's at 9PM EST, and Sunday's at 9PM EST. There will only be ONE tournament on each of these days. Players will be sat at the tournament in a first come first serve basis(announcements will be made in discord prior to start of each tournament). Players that did not make it into a game will be put at the beginning of the list for the text game.</p>
+            </div>
+
+            <div class="SubSection">
+                <h2 class="Center SubSection"><b>Weekly Games</b></h2>
+                <p class="Center">Each weekly game will consist of 10 players. All players will earn points based on what order they bust in.(Eight minus the rank you bust plus one is the formula to calculate your points) The top three players in each game will earn chips and unique items. The weekly games are complete when all but one player is busted. Players will chose there place on the table by high card at the start of each game. A timer will be started at the beginning of the first hand and every 8 minutes blinds will double(Starting 500/1000). The timer will be paused in the event of a All-In, break, or if there is a technical issue that needs to be resolved..</p>
+            </div>
+
+            <div class="SubSection">
+                <h2 class="Center SubSection"><b>Final Tournament</b></h2>
+                <p class="Center">At the end of Summer Circuit(Saturday, August 24th, 2021 last game of event) the top 10 point holders will be invited to a final tournament to decide a single champion. The Final Tournament date will be decided at the end of the circuit to best accommodate the top 10 point holders. All players in the Final Tournament will receive unique prizes. The top 3 players in the Final Tournament will receive chips.(chip prize is based on the total amount of player buy-ins; 60% for first, 30% for second, and 10% for third)  The top player will be named "Summer Circuit 2021 Champion" and given that title in the discord, will get additional unique items, a one month VIP Membership token, and 100 USD.</p>
+            </div>
+
+        </div>
+        <div class="col-md-2"></div>
+
+    </div>
+
+</div>
+
+
+</body>
+<% include partials/footer.ejs %>
+</html>

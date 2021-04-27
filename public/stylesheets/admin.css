@@ -1,0 +1,50 @@
+.success {
+    color: black;
+    background-color: burlywood;
+}
+
+form {
+    margin-bottom: 10vh;
+    margin-left: 2vw;
+
+}
+form > label {
+    margin-right: 1vw;
+    font-size: 1.5rem;
+    color: white;
+
+}
+.FormSection {
+    background-color: #333;
+    border-radius: 25px;
+
+}
+
+.FormSection h1 {
+    margin-left: 2vw;
+}
+
+.Right {
+    height: 100%;
+}
+
+.left {
+    height: 100%;
+}
+label {
+    margin-left: 1vw;
+    margin-right: -5vw;
+
+}
+
+select {
+
+    padding-bottom: .5vh;
+    padding-top: .5vh;
+
+}
+
+button {
+    padding-bottom: 0.01rem;
+}
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" type="image/png" href="<%= icon %>" style="width: 32px; height: auto">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='stylesheets/style.css'/>
+    <link rel='stylesheet' href='stylesheets/index.css'/>
+    <link rel='stylesheet' href='stylesheets/gppt.css'/>
+
+</head>
+<body>
+<!-- navbar here   -->
+<% include partials/navbar.ejs %>
+<div class="LandingScreen">
+    <h1 class="Center" style="margin-bottom: 5vh;"><%= title %></h1>
+</div>
+
+<head>
+<!--    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+<!--    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+<!--    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+</head>
+
+<div class="container">
+    <div id="main_area">
+        <!-- Slider -->
+        <div class="row">
+            <div class="col-xs-8" id="slider">
+                <!-- Top part of the slider -->
+                <div class="row Center">
+                    <div class="col-sm-12" id="carousel-bounding-box">
+                        <div class="carousel slide" id="myCarousel">
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+
+
+                                <div class="active item" data-slide-number="0">
+                                    <img src="images/table_gpp/empty_table.webp">
+                                    <div class="carousel-caption">
+                                        <h2></h2>
+                                        <p></p>
+                                        <p class="sub-text"></p>
+                                    </div>
+                                </div>
+
+
+                                <div class="item" data-slide-number="1">
+                                    <img src="images/table_gpp/full_table.webp">
+                                    <div class="carousel-caption">
+                                        <h2></h2>
+                                        <p></p>
+                                        <p class="sub-text"></p>
+                                    </div>
+                                </div>
+
+
+                                <div class="item" data-slide-number="2">
+                                    <img src="images/table_gpp/full_table2.webp">
+                                    <div class="carousel-caption">
+                                        <h2></h2>
+                                        <p></p>
+                                        <p class="sub-text"></p>
+                                    </div>
+                                </div>
+
+
+                                <div class="item" data-slide-number="2">
+                                    <img src="images/table_gpp/large_view_table.webp">
+                                    <div class="carousel-caption">
+                                        <h2></h2>
+                                        <p></p>
+                                        <p class="sub-text"></p>
+                                    </div>
+                                </div>
+
+
+                                <div class="item" data-slide-number="2">
+                                    <img src="images/table_gpp/prizes.webp">
+                                    <div class="carousel-caption">
+                                        <h2></h2>
+                                        <p></p>
+                                        <p class="sub-text"></p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <!-- Carousel nav -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4 Description">
+                <h1>Community At The Table</h1>
+                <p>GrandPappy's Poker Table is a fun and exciting place to play Texas Hold'em with other great people who enjoy the game. Our table is most popular for the wide variety of rare items that players collect and trade with each other. Hosted Monday's thru Thursday's at various times to try and accommodate players from all around the world. Check us out the next time we are hosting and have some fun! </p>
+            </div>
+        </div>
+
+    </div>
+    <!--/Slider-->
+
+
+</div>
+</div>
+
+<script>
+    jQuery(document).ready(function ($) {
+        //set here the speed to change the slides in the carousel or pause them
+        $('#myCarousel').carousel({
+            pause: true,
+            interval: false
+        });
+
+//Loads the html to each slider. Write in the "div id="slide-content-x" what you want to show in each slide
+        $('#carousel-text').html($('#slide-content-0').html());
+
+        //Handles the carousel thumbnails
+        $('[id^=carousel-selector-]').click(function () {
+            var id = this.id.substr(this.id.lastIndexOf("-") + 1);
+            var id = parseInt(id);
+            $('#myCarousel').carousel(id);
+        });
+
+
+        // When the carousel slides, auto update the text
+        $('#myCarousel').on('slid.bs.carousel', function (e) {
+            var id = $('.item.active').data('slide-number');
+            $('#carousel-text').html($('#slide-content-' + id).html());
+        });
+    });
+
+
+</script>
+
+
+</body>
+<% include partials/footer.ejs %>
+</html>

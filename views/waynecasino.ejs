@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" type="image/png" href="<%= icon %>" style="width: 32px; height: auto">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='stylesheets/style.css'/>
+    <link rel='stylesheet' href='stylesheets/index.css'/>
+
+</head>
+<body>
+<!-- navbar here   -->
+<% include partials/navbar.ejs %>
+
+<div class="LandingScreen">
+    <h1 class="Center"><%= title %></h1>
+    <div class="Center">
+        <img class="Center" src="images/construction.jpg" alt="Logo" style="height: 1000px; width: auto;">
+    </div>
+</div>
+
+</body>
+<% include partials/footer.ejs %>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" type="image/png" href="<%= icon %>" style="width: 32px; height: auto">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='stylesheets/style.css'/>
+    <link rel='stylesheet' href='stylesheets/leaderboards.css'/>
+</head>
+<body>
+<!-- navbar here   -->
+<% include partials/navbar.ejs %>
+<link rel="stylesheet"
+      href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+<script type="text/javascript"
+        src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<h1 class="Center">Leaderboard</h1>
+<label for="selectTournament">Select Tournament</label><select class="selectTournamentLB selectTournamentForSession"
+                                                               name="tournament_id"
+                                                               id="tournament_id" onchange="updateUsers()" required></select><br>
+<div class="table-responsive">
+    <table class="table displaytable transparent">
+        <thead>
+        <tr>
+            <th data-mdb-sort="true">Place</th>
+            <th data-mdb-sort="true">UserName</th>
+            <th data-mdb-sort="true">Wins</th>
+            <th data-mdb-sort="true"> Total Games Played</th>
+            <th data-mdb-sort="true">Average Score</th>
+            <th data-mdb-sort="true">Tournament Score</th>
+        </tr>
+        </thead>
+        <tbody class="tableBodyData">
+
+        </tbody>
+
+    </table>
+</div>
+</body>
+<% include partials/footer.ejs %>
+</html>
+
+<script>
+
+
+    function getAllPlayersInTournament(tournamentID) {
+        try {
+            $.ajax({
+                type: 'GET',
+                url: `/tournaments/getAllPlayersInTournamentDescending/${tournamentID}`,
+                success: function (players) {
+                    $('tbody').empty();
+
+                    let i = 0;
+                    for (const player of players) {
+                        i += 1;
+                        let selection = `<tr>
+            <td>${i}</td>
+            <td>${player.userName}</td>
+            <td>${player.numberFirstPlaceWins}</td>
+            <td>${player.numberGamesPlayed}</td>
+            <td>${player.tournamentScore / player.numberGamesPlayed}</td>
+            <td>${player.tournamentScore}</td>
+    </tr>`;
+                        $('.tableBodyData').append(selection);
+                        // console.log(selection);
+                    }
+                }
+            });
+        } catch{}}
+
+
+    $(document).ready(function (e) {
+        getAllTournaments();
+
+    });
+
+    $('.selectTournamentLB').onchange(async (e)=>{
+        $('.tableBodyData').empty();
+    });
+
+    function getAllTournaments() {
+        $.ajax({
+            type: 'GET',
+            url: '/tournaments/getAllTournaments',
+            success: function (tournaments) {
+                $('.selectTournamentLB').empty();
+                $('.selectTournamentLB').append(`<option value="" disabled selected>Select Tournament</option>`);
+                for (const t in tournaments) {
+                    let selection = `<option value=${tournaments[t]._id}>` + tournaments[t].name + '</option>';
+                    $('.selectTournamentLB').append(selection);
+
+                    console.log(tournaments[t]);
+                }
+            }
+        });
+    }
+
+    function updateUsers() {
+        // location.reload();
+        let tournamentID = $('.selectTournamentForSession').val();
+        getAllPlayersInTournament(tournamentID);
+    }
+
+</script>

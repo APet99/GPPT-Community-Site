@@ -1,0 +1,94 @@
+.LandingScreen {
+    /*float: left;*/
+    position: relative;
+    /*left: 50%;*/
+    /*display: block;*/
+}
+
+.Center {
+    position: relative;
+    /*outline: 1px dotted gray;*/
+    display:flex;
+    justify-content:center;
+}
+
+
+.LandingScreen h1{
+    float: top;
+    /*text-align: center;*/
+    position: relative;
+    /*left: -50%;*/
+    font-size: 5rem;
+    /*position: inherit;*/
+    /*left: inherit;*/
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.LandingScreen img {
+    /*box-sizing: border-box;*/
+    /*flex: auto;*/
+    /*display: block;*/
+
+    /*height: 1vh;*/
+    width: auto;
+    height: 100vh;
+    padding: 0 0 0 0;
+    pointer-events: none;
+}
+
+.WebDescription {
+    /*float: left;*/
+    /*display: block;*/
+    width: 100%;
+    /*justify-self: left;*/
+}
+
+.WebDescription img {
+    border-radius: 40px;
+    outline-color: white;
+    outline-width: 3px;
+    outline-style: solid;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.WebDescription h1 {
+    font-size: 7rem;
+    overflow: hidden;
+}
+
+.WebDescription p {
+    font-size: 2.5rem;
+}
+
+.card-body h5 {
+    color: White;
+    /*font-size: 50px;*/
+}
+
+.card img {
+    pointer-events: none;
+    height: 110px;
+    width: auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 35px;
+}
+
+.Offer h1 {
+    font-size: 7rem;
+    overflow: hidden;
+    margin-bottom: 3vh;
+    padding-bottom: 1vh;
+}
+
+.card h5, .card p{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.card h5 {
+    font-style: italic;
+}

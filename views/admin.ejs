@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" type="image/png" href="<%= icon %>" style="width: 32px; height: auto">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='stylesheets/style.css'/>
+    <link rel='stylesheet' href='stylesheets/index.css'/>
+    <link rel='stylesheet' href='stylesheets/admin.css'/>
+</head>
+<body>
+<!-- navbar here   -->
+<% include partials/navbar.ejs %>
+<div class="LandingScreen">
+    <h1 class="Center"><%= title %></h1>
+    <div class="Center">
+    </div>
+</div>
+<div class="col-md-6 Left">
+    <h1 class="Center">Tournament Management</h1>
+    <div class="FormSection transparent">
+        <h1 class="">Create Tournament</h1>
+        <form action="" id="createTournament" method="post">
+            <label for="name">Tournament Name</label><input type="text" name="name" id="name"
+                                                            placeholder="Tournament Name">
+            <button type="submit">Create Tournament</button>
+            <span class=" success successCreateTournament" hidden>Successfully Created New Tournament</span>
+        </form>
+    </div>
+
+    <div class="FormSection transparent">
+        <h1 class="">Delete Tournament</h1>
+        <form action="" id="deleteTournament" method="post">
+            <label for="_id">Tournament Name</label>
+            <select class="selectTournament" name="_id" id="_id" placeholder="Tournament Name">
+
+            </select>
+            <button type="submit">Delete Tournament</button>
+            <span class=" success successDeleteTournament" hidden>Successfully Deleted Tournament</span>
+        </form>
+    </div>
+
+
+    <div class="FormSection transparent">
+        <h1 class="">Add New Player To Tournament</h1>
+        <form action="" id="AddUserToTournamentForm" method="post">
+            <select class="selectTournament" name="_id" id="_id" required></select> <input type="text" name="userName"
+                                                                                  id="userName" placeholder="User Name" required>
+            <button type="submit"> Add Player</button>
+            <span class="success successAddUserToTournament" hidden>Successfully Added Player To The Tournament</span>
+        </form>
+    </div>
+
+
+    <div class="FormSection transparent">
+        <h1 class="">Update Player Position</h1>
+        <form action="" id="massUpdateTournament" method="post">
+            <label for="selectTournament">Select Tournament</label><select class="selectTournament selectTournamentForSession" name="tournament_id"
+                                                                           id="tournament_id" onchange="updateUsers()"></select><br>
+
+                <label for="selectUserByTournament">Select User1</label><select class="selectUserByTournament" name="_id1"
+                                                                   id="_id1"></select>
+                <label for="posFinish">Position</label><select name="posFinish1" id="posFinish1">
+                    <option value=""> </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select><br>
+
+            <div style="margin-bottom: .75vh;"></div>
+            <label for="selectUser">Select User2</label><select class="selectUserByTournament" name="_id2"
+                                                               id="_id2"></select>
+            <label for="posFinish">Position</label><select name="posFinish2" id="posFinish2">
+                <option value=""> </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select><br>
+
+
+            <div style="margin-bottom: .75vh;"></div>
+            <label for="selectUser">Select User3</label><select class="selectUserByTournament" name="_id3"
+                                                               id="_id3"></select>
+            <label for="posFinish">Position</label><select name="posFinish3" id="posFinish3">
+                <option value=""> </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select><br>
+
+            <div style="margin-bottom: .75vh;"></div>
+            <label for="selectUser">Select User4</label><select class="selectUserByTournament" name="_id4"
+                                                               id="_id4"></select>
+            <label for="posFinish">Position</label><select name="posFinish4" id="posFinish4">
+                <option value=""> </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select><br>
+
+
+            <div style="margin-bottom: .75vh;"></div>
+            <label for="selectUser">Select User5</label><select class="selectUserByTournament" name="_id5"
+                                                               id="_id5"></select>
+            <label for="posFinish">Position</label><select name="posFinish5" id="posFinish5">
+                <option value=""> </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select><br>
+
+
+            <div style="margin-bottom: .75vh;"></div>
+            <label for="selectUser">Select User6</label><select class="selectUserByTournament" name="_id6"
+                                                               id="_id6"></select>
+            <label for="posFinish">Position</label><select name="posFinish6" id="posFinish6">
+                <option value=""> </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select><br>
+
+
+            <div style="margin-bottom: .75vh;"></div>
+            <label for="selectUser">Select User7</label><select class="selectUserByTournament" name="_id7"
+                                                               id="_id7"></select>
+            <label for="posFinish">Position</label><select name="posFinish7" id="posFinish7">
+                <option value=""> </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select><br>
+
+
+            <div style="margin-bottom: .75vh;"></div>
+            <label for="selectUser">Select User8</label><select class="selectUserByTournament" name="_id8"
+                                                               id="_id8"></select>
+            <label for="posFinish">Position</label><select name="posFinish8" id="posFinish8">
+                <option value=""> </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select><br>
+
+
+            <button type="submit" style="width: 150px;"> Update Tournament</button>
+            <span class="success successMassUpdateTournament" hidden>Successfully Updated The Tournament</span>
+        </form>
+    </div>
+</div>
+
+</div>
+<div class="col-md-6 Right">
+    <h1 class="Center">Future Admin Functionality Can Go Here. . .</h1>
+    <div style="margin-bottom: 100vh;"></div>
+</div>
+<div style="margin-bottom: 80vh;"></div>
+</body>
+<% include partials/footer.ejs %>
+</html>
+<script>
+    $('#AddUserForm').submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/users/createUser',
+            data: $(this).serialize(),
+            success: function () {
+                $('.successCreateTournament').fadeIn(1500).show();
+                $('.successCreateTournament').fadeOut(3000).hidden;
+            }
+        });
+
+    });
+
+    $('#createTournament').submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/tournaments/createNewTournament',
+            data: $(this).serialize(),
+            success: function () {
+                $('.successCreateTournament').fadeIn(1500).show();
+                $('.successCreateTournament').fadeOut(3000).hidden;
+                getAllTournaments();
+            }
+        });
+
+    });
+
+
+    function getAllTournaments() {
+        $.ajax({
+            type: 'GET',
+            url: '/tournaments/getAllTournaments',
+            success: function (tournaments) {
+                $('.selectTournament').empty();
+                $('.selectTournament').append(`<option value="" disabled selected>Select Tournament</option>`);
+                for (const t in tournaments) {
+                    let selection = `<option value=${tournaments[t]._id}>` + tournaments[t].name + '</option>';
+                    $('.selectTournament').append(selection);
+
+                    console.log(tournaments[t]);
+                }
+            }
+        });
+    }
+
+    function updateUsers(){
+        let tournamentID = $('.selectTournamentForSession').val();
+        getAllPlayersInTournament(tournamentID);
+    }
+
+    function getAllPlayersInTournament(tournamentID) {
+        $.ajax({
+            type: 'GET',
+            url: `/tournaments/getAllPlayersInTournament/${tournamentID}`,
+            success: function (tournament) {
+                console.log(tournament)
+                $('.selectUserByTournament').empty();
+                $('.selectUserByTournament').append('<option value="" disabled selected>Select User</option>');
+                for (const u in tournament.players) {
+                    console.log(u);
+                    let selection = `<option value=${tournament.players[u].userName}>` + tournament.players[u].userName + '</option>';
+                    $('.selectUserByTournament').append(selection);
+
+                    console.log(tournament.players[u]);
+                }
+            }
+        });
+    }
+
+
+
+    $(document).ready(function (e) {
+        getAllTournaments();
+
+    });
+    $('#deleteTournament').on(function (e) {
+        getAllTournaments();
+    });
+
+    $('#deleteTournament').submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'DELETE',
+            url: '/tournaments/deleteTournamentByID',
+            data: $(this).serialize(),
+            success: function () {
+                $('.successDeleteTournament').fadeIn(1500).show();
+                $('.successDeleteTournament').fadeOut(3000).hidden;
+                getAllTournaments();
+                console.log($(this).serialize());
+            }
+        });
+
+    });
+
+    $('#AddUserToTournamentForm').submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/tournaments/addPlayerToTournament',
+            data: $(this).serialize(),
+            success: function () {
+                $('.successAddUserToTournament').fadeIn(1500).show();
+                $('.successAddUserToTournament').fadeOut(3000).hidden;
+            }
+        });
+
+    });
+
+    $('#massUpdateTournament').submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'PUT',
+            url: '/tournaments/massUpdateTournament',
+            data: $(this).serialize(),
+            success: function () {
+                $('.successMassUpdateTournament').fadeIn(1500).show();
+                $('.successMassUpdateTournament').fadeOut(3000).hidden;
+            }
+        });
+
+    });
+
+
+</script>
+
